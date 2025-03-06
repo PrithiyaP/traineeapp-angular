@@ -1,0 +1,24 @@
+ <form [formGroup]="myForm">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Project ID</th>
+            <th>Project Name</th>
+            <th>Role</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="number" name="id" id="id" [(ngModel)]="value.pid"  formControlName="pid">{{value.pid}}</td>
+             <td> <input type="text" name="pname" id="pname" [(ngModel)]="value.pname" formControlName="pname">{{value.pname}}</td>
+           
+             <td><input type="text" name="role" id="role"  [(ngModel)]="value.Role"  formControlName="Role">{{value.Role}}</td>
+             <td><input type="text" name="status" id="status" [(ngModel)]="value.status"  formControlName="status">{{value.status}}</td>
+          </tr>
+        </tbody>
+      </table>
+</form>
+<button class="button" mat-button color="primary" mat-dialog-close>Save</button>
+
+

@@ -1,0 +1,48 @@
+<table mat-table   [dataSource]="user" class="mat-elevation-z8">
+
+<!-- matColumnDef====>unique identifier for the column definition =>represent the column with the header-->
+<!-- ng-container====> group and render elements dynamically-->
+<!-- *matHeaderCellDef: structural directive that signifies  element is a template for the header cell. It will be repeated for each column. -->
+<!-- *matCellDef:structural directive that signifies,element is a template for the data cell. It will be repeated for each row of data. -->
+<!-- mat-header-cell==>header cell. -->
+<!-- mat-cell==>data cell -->
+  <ng-container matColumnDef="Project ID">
+    <th mat-header-cell *matHeaderCellDef>Project ID</th>
+    <td mat-cell *matCellDef="let element"> {{element.pid}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Project Name">
+    <th mat-header-cell *matHeaderCellDef> Project Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.pname}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="Role">
+    <th mat-header-cell *matHeaderCellDef> Role </th>
+    <td mat-cell *matCellDef="let element"> {{element.Role}} </td>
+  </ng-container>
+
+ 
+  <ng-container matColumnDef="Status">
+    <th mat-header-cell *matHeaderCellDef> Status </th>
+    <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+  </ng-container>
+
+   <ng-container matColumnDef="skills">
+    <th mat-header-cell *matHeaderCellDef> skills </th>
+    <td mat-cell *matCellDef="let element"> {{element.skills}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Action">
+    <th mat-header-cell *matHeaderCellDef> Action </th>
+    <td mat-cell *matCellDef="let element">
+    <button  (click)="opendialog(element)"><mat-icon class="icon">edit</mat-icon></button>
+    </td>
+
+    
+  </ng-container>
+<!-- mat-header-row===>row is meant to be the header row of an Angular Material table. -->
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
